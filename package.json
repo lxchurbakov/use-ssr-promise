@@ -1,11 +1,17 @@
 {
   "name": "use-ssr-promise",
-  "version": "0.1.0",
-  "main": "index.js",
+  "version": "0.2.0",
+  "main": "dist/index.js",
   "author": "lxchurbakov",
   "license": "MIT",
-  "description": "TBD",
+  "description": "Just use any promise in your SSR",
+  "scripts": {
+    "build": "npx tsc"
+  },
   "peerDependencies": {
     "react": "^18"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
   }
 }
