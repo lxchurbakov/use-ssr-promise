@@ -1,6 +1,8 @@
 # SSR Promise
 
-## Step1. Use renderToPipeableStream on SSR
+Just use promises on your SSR. (React 18+)
+
+## Step 1. Switch to renderToPipeableStream on Server Side
 
 ```js
 // before
@@ -28,7 +30,7 @@ app.get('/', (req, res) => {
     
 ```
 
-## Step 2. Add SSR Cache
+## Step 2. Add ServerPromiseProvider with Cache on Server Side
 
 ```js
 app.get('/', (req, res) => {
@@ -51,7 +53,7 @@ app.get('/', (req, res) => {
     })
 ```
 
-## Step 3. Unwrap cache on client side
+## Step 3. Add ServerPromiseProvider and unwrap Cache on Client Side
 
 ```jsx
 const app = document.getElementById('app');
@@ -67,7 +69,7 @@ const root = hydrateRoot(app, (
 ## Step 4. Enjoy!
 
 ```js
-// Data will be rendered on SSR
+// Data will be rendered on SSR and rehydrated on client side
 const data = useServerPromise(() => fetch('...'));
 
 return (
